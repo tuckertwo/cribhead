@@ -8,10 +8,12 @@ and [Cribbage](https://en.wikipedia.org/wiki/Cribbage).
 Planning stages.
 
 ## Standards
-To be written in Javascript (possibly TypeScript when possible?), Node.JS,
-and Express.
-Database transactions should happen using Sequelize.
-Most frontend-backend communication should be through WAMP.
+To be written in Javascript (possibly
+[TypeScript](https://www.typescriptlang.org/) when possible?), Node.JS, and
+Express.
+Database transactions should happen using [Sequelize](https://sequelize.org/).
+Most frontend-backend communication should be through
+[WAMP](https://wamp-proto.org/index.html).
 All logic code should have unit tests.
 
 ## Documentation
