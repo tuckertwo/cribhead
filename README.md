@@ -1,4 +1,4 @@
-# Quarantine card games
+# Cribhead: online card games during quarantine
 A simple webapp to allow people to play card games over the Internet.
 Will eventually support
 [Shithead](https://en.wikipedia.org/wiki/Shithead_(card_game))
