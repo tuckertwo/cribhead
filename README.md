@@ -4,6 +4,9 @@ Will eventually support
 [Shithead](https://en.wikipedia.org/wiki/Shithead_(card_game))
 and [Cribbage](https://en.wikipedia.org/wiki/Cribbage).
 
+## License
+[2-Clause BSD](LICENSE)
+
 ## Status
 Planning stages.
 
