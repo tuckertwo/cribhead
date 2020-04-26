@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" %% exit 1",
-    "devstart": "DEBUG=cribhead:* node ./bin/www",
+    "devstart": "DEBUG=cribhead:* nodemon ./bin/www",
     "start": "node ./bin/www"
   },
   "dependencies": {
