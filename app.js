@@ -3,10 +3,14 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const arangojs = require("arangojs")
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var inspectRouter = require('./routes/inspector.js');
 
+const db_conf = {url: process.env.ARANGO_CONN || "http://localhost:8529"}
+const db = new arangojs.Database(db_conf);
 var app = express();
 
 // view engine setup
@@ -21,6 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/inspect/', inspectRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
