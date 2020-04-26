@@ -14,7 +14,8 @@ Planning stages.
 To be written in Javascript (possibly
 [TypeScript](https://www.typescriptlang.org/) when possible?), Node.JS, and
 Express.
-Database transactions should happen using [Sequelize](https://sequelize.org/).
+This project uses [ArangoDB](https://www.arangodb.com/) as its database, via the
+[`arango`](https://www.npmjs.com/package/arango) package.
 Most frontend-backend communication should be through
 [WAMP](https://wamp-proto.org/index.html).
 All logic code should have unit tests.
