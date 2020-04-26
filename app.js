@@ -23,6 +23,15 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use((req, res, next) =>
+{
+  if (! req.url.endsWith('/'))
+  {
+    res.redirect(301, req.url + "/");
+  }
+  next();
+});
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/inspect/', inspectRouter);
