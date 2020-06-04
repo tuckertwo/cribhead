@@ -14,7 +14,7 @@ cardToNumber = (array, card) =>
   return sortList[card];
 }
 
-module.exports.compare = (aceHigh, c1, c2) =>
+module.exports.compare = (aceHigh, {n: c1}, {n: c2}) =>
 {
   const sort = aceHigh ? cardsAceHigh : cardsAceLow;
   const num1 = cardToNumber(sort, c1);
