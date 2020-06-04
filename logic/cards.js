@@ -44,4 +44,5 @@ module.exports.shuffle = (array) =>
     array[i]    = array[rand];
     array[rand] = temp
   }
+  return array;
 }
