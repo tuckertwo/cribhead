@@ -61,3 +61,20 @@ module.exports.shuffle = (array) =>
   }
   return array;
 }
+
+// "Deals" a number of cards to players by shift()-ing individual cards out of
+// an array.
+// Takes the array to deal out of (not modified) and the number to deal.
+// Returns a two-element array with the source array and the dealt elements.
+module.exports.shiftNum = (array, num) =>
+{
+  var source = array;
+  var dest   = [];
+  for(var i=0; i<num; i++)
+  {
+    const single = source.shift();
+    if(single==undefined) { return [source, []] }
+    dest.push(single);
+  }
+  return [source, dest];
+}
