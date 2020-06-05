@@ -10,6 +10,10 @@ const cardsAceLow  = ["ace"].concat(cardsNotAce);
 // Suits, in no paticular order.
 const stdSuits    = ["spades", "diamonds", "clubs", "hearts"];
 
+// Card operations -------------------------------------------------------------
+
+// Turns the numerical value of a given card value into a number for comparison
+// purposes.
 cardToNumber = (array, card) =>
 {
   const arrayPair = [...array.keys()].map((i) => {return [array[i], i]});
@@ -17,6 +21,7 @@ cardToNumber = (array, card) =>
   return sortList[card];
 }
 
+// Version of newStdDeck() abstracted to different types of deck.
 newDeckArray = (carray, suits) =>
 { // TODO: make more configurable (more deck types, configurable suits)
   const baseArr   = [...Array(carray.length*suits.length).keys()]
@@ -24,8 +29,11 @@ newDeckArray = (carray, suits) =>
     { return {s: suits[x%4], n: carray[Math.floor(x/suits.length)]} });
 }
 
+// Generate new standard 52-card deck, in order.
 module.exports.newStdDeck = () => newDeckArray(cardsAceHigh, stdSuits);
 
+// Returns a function to compare two cards by their numbers.
+// Argument is true if aces are high, false otherwise.
 module.exports.compareFunc = (aceHigh) =>
 {
   const sort = aceHigh ? cardsAceHigh : cardsAceLow;
@@ -38,6 +46,10 @@ module.exports.compareFunc = (aceHigh) =>
   }
 }
 
+// Card-related array functions ------------------------------------------------
+
+// Shuffle array
+// TODO: Use Fisher-Yates
 module.exports.shuffle = (array) =>
 {
   for(var i=0; i<array.length; i++)
