@@ -26,13 +26,16 @@ newDeckArray = (carray, suits) =>
 
 module.exports.newStdDeck = () => newDeckArray(cardsAceHigh, stdSuits);
 
-module.exports.compare = (aceHigh, {n: c1}, {n: c2}) =>
+module.exports.compareFunc = (aceHigh) =>
 {
   const sort = aceHigh ? cardsAceHigh : cardsAceLow;
-  const num1 = cardToNumber(sort, c1);
-  const num2 = cardToNumber(sort, c2);
+  return ({n:c1}, {n:c2}) =>
+  {
+    const num1 = cardToNumber(sort, c1);
+    const num2 = cardToNumber(sort, c2);
 
-  return (num1 > num2) - (num1 < num2);
+    return (num1 > num2) - (num1 < num2);
+  }
 }
 
 module.exports.shuffle = (array) =>
