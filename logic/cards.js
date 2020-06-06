@@ -48,11 +48,10 @@ module.exports.compareFunc = (aceHigh) =>
 
 // Card-related array functions ------------------------------------------------
 
-// Shuffle array
-// TODO: Use Fisher-Yates
+// Permute array using Fisher-Yeats (a.k.a Knuth) algorithm
 module.exports.shuffle = (array) =>
 {
-  for(var i=0; i<array.length; i++)
+  for(var i=array.length-1; i>=1; i--)
   {
     var rand    = Math.floor(Math.random()*i);
     [array[i], array[rand]] = [array[rand], array[i]]
